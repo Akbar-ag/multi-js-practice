@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Form Validation</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            background: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            width: 300px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input.error {
+            border-color: red;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 13px;
+            margin-top: 5px;
+            display: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #4CAF50;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form id="myForm">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+            <div class="error-message">Please enter your name</div>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email">
+            <div class="error-message">Please enter your email</div>
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone" name="phone">
+            <div class="error-message">Please enter your phone number</div>
+        </div>
+
+        <div class="form-group">
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city">
+            <div class="error-message">Please enter your city</div>
+        </div>
+
+        <div class="form-group">
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject">
+            <div class="error-message">Please enter the subject</div>
+        </div>
+
+        <div class="form-group">
+            <label for="message">Message:</label>
+            <input type="text" id="message" name="message">
+            <div class="error-message">Please enter a message</div>
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+
+
+    <script>
+        const form = document.getElementById('myForm');
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault(); // جلوگیری از ارسال فرم
+
+            let isValid = true;
+            const inputs = form.querySelectorAll('input[type="text"]');
+
+            inputs.forEach(input => {
+                const error = input.nextElementSibling;
+
+                if (input.value.trim() === '') {
+                    input.classList.add('error');
+                    error.style.display = 'block';
+                    isValid = false;
+                } else {
+                    input.classList.remove('error');
+                    error.style.display = 'none';
+                }
+            });
+
+            if (isValid) {
+                alert("Form submitted successfully!");
+                form.reset();
+            }
+        });
+    </script>
+
+</body>
+
+</html>
