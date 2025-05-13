@@ -9,7 +9,7 @@
 
   <div class="card p-4 shadow" style="width: 300px;">
     <h4 class="text-center mb-4">Login</h4>
-    <form>
+    <form id="loginForm">
       <div class="mb-3">
         <label for="username" class="form-label">Username</label>
         <input type="text" class="form-control" id="username" placeholder="Enter username" required>
@@ -18,9 +18,28 @@
         <label for="password" class="form-label">Password</label>
         <input type="password" class="form-control" id="password" placeholder="Enter password" required>
       </div>
+      <div class="text-danger mb-3 d-none" id="error">Invalid username or password</div>
       <button type="submit" class="btn btn-primary w-100">Login</button>
     </form>
   </div>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const error = document.getElementById("error");
+
+      if (username === "admin" && password === "admin") {
+        window.location.href = "admin.html";
+      } else if (username === "user" && password === "user") {
+        window.location.href = "user.html";
+      } else {
+        error.classList.remove("d-none");
+      }
+    });
+  </script>
 
 </body>
 </html>
