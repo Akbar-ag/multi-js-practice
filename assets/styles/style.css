@@ -1,0 +1,103 @@
+.font1{
+    font-family: "Raleway", sans-serif;
+}
+.font2{
+    font-family: "Poppins", sans-serif;
+}
+.font3{
+    font-family: "Roboto", sans-serif;
+}
+.text-black{
+    color: #0b2341 !important;
+}
+.text-dark{
+    color: #444 !important;
+}
+.btn-danger{
+    background-color: #ed502e !important;
+}
+.cursor-pointer{
+    cursor: pointer;
+}
+li a:hover{
+    color: #ed502e !important;
+}
+.btn-danger:hover{
+    background-color: #ff6947 !important;
+}
+.slide-image1{
+    background-image:linear-gradient(rgba(1,1,1,0.6),rgba(1,1,1,0.6)), url(../images/hero-carousel-1.jpg);
+}
+.slide-image2{
+    background-image:linear-gradient(rgba(1,1,1,0.6),rgba(1,1,1,0.6)), url(../images/hero-carousel-2.jpg);
+}
+.slide-image3{
+    background-image:linear-gradient(rgba(1,1,1,0.6),rgba(1,1,1,0.6)), url(../images/hero-carousel-3.jpg);
+}
+.slide-image{
+    width: 100%;
+    height: 60vh;
+    background-position: center;
+    background-size: cover;
+}
+.fs-1{
+    font-size: 3rem !important;
+}
+.slide-image div p{
+    padding: 0px 0px 16px;
+    width: 55%;
+}
+.text-muted{
+    opacity: 70%;
+}
+.about h2{
+    letter-spacing: 1px;
+}
+.title-after::after{
+    content: "";
+    background-color: red;
+    display: inline-block;
+    width: 120px;
+    height: 1px;
+    margin: 4px 10px;
+}
+.border-icon{
+    width: 54px;
+    height: 54px;
+    top: -25px;
+}
+.about2{
+    margin-top: 150px;
+}
+.about3{
+    margin-top: 130px;
+}
+.services{
+    margin-top: 150px;
+}
+.background-icon{
+    width: 64px;
+    height: 64px;
+}
+.bg-danger{
+    background-color: #ed502e !important;
+}
+.shadow-box{
+    box-shadow: -8px -8px 0px #ed512e47;
+}
+.services-card{
+    padding: 80px 5px;
+    transition: 0.3s;
+}
+.services-card:hover{
+    background-color: #ed502e;
+    color: white;
+}
+.services-card:hover i{
+    color: #ed502e !important;
+}
+
+.services-card:hover .background-icon{
+    background-color: white !important; 
+    box-shadow: -8px -8px 0px rgba(255, 255, 255, 0.33) ;
+}
